@@ -5,7 +5,9 @@
 set -xe
 
 # Provide default if no parameter is passed.
-export OPENEDX_RELEASE=${1:-"open-release/ficus.master"}
+# export OPENEDX_RELEASE=${1:-"open-release/ficus.master"}
+export OPENEDX_RELEASE=${1:-"oxa/master.fic"}
+
 export CONFIGURATION_VERSION=$OPENEDX_RELEASE
 CONFIG_REPO=https://github.com/microsoft/edx-configuration.git
 ANSIBLE_ROOT=/edx/app/edx_ansible
