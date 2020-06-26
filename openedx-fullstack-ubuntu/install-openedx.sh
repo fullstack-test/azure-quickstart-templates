@@ -5,11 +5,10 @@
 set -xe
 
 # Provide default if no parameter is passed.
-# export OPENEDX_RELEASE=${1:-"open-release/ficus.master"}
-export OPENEDX_RELEASE=${1:-"oxa/master.fic"}
+export OPENEDX_RELEASE=${1:-"open-release/ficus.master"}
 
 export CONFIGURATION_VERSION=$OPENEDX_RELEASE
-CONFIG_REPO=https://github.com/fullstack-test/edx-configuration.git
+CONFIG_REPO=https://github.com/CS-Ironwood/configuration.git
 ANSIBLE_ROOT=/edx/app/edx_ansible
 CONFIGURATION_ROOT=/tmp/configuration
 CURRENT_SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -40,7 +39,7 @@ verify_ssh()
 install_ansible()
 {
     # This URL structure works when $OPENEDX_RELEASE is a branch or tag in the configuration repo.
-    wget https://raw.githubusercontent.com/fullstack-test/edx-configuration/$OPENEDX_RELEASE/util/install/ansible-bootstrap.sh -O ansible-bootstrap.sh
+    wget https://raw.githubusercontent.com/CS-Ironwood/configuration/$OPENEDX_RELEASE/util/install/ansible-bootstrap.sh -O ansible-bootstrap.sh
     source ansible-bootstrap.sh
 }
 
